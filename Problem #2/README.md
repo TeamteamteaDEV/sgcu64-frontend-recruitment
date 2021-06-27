@@ -115,7 +115,7 @@ there is a probability that user miss the location list and type the exist locat
 This program have a function that can detect
   - type wrong case
   - short/full written case
-  For example. 
+  &emsp; For example. 
     -> "Mahamongkut" == "Mahamankut"   
     -> "Samyan Mitr" == "Mite" == "Samyan" == "Sammyanm"
 
