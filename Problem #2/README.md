@@ -117,8 +117,8 @@ This program have a function that can detect
   - short/full written case
 
 For example. 
--> "Mahamongkut" == "Mahamankut"   
--> "Samyan Mitr" == "Mite" == "Samyan" == "Sammyanm"
+ -  "Mahamongkut" == "Mahamankut"   
+ -  "Samyan Mitr" == "Mite" == "Samyan" == "Sammyanm"
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------                  
 **Incompleteness of the program** :
