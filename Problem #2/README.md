@@ -98,3 +98,33 @@ Please input any number: 3
 # Applicant Section
 
 ตั้งแต่ส่วนนี้ลงไป เป็นส่วนที่ผู้สมัครสามารถแก้ไขได้ตามอัธยาศัย ซึ่งอาจจะเป็นข้อสันนิษฐานหรือไอเดียเพิ่มเติมก็ได้
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+**Assumption** : 
+  1. User always type in english.
+  2. Every location in Chula does not have resemble names. For example, "Sara" and "Sarab". If this program division this case, resault is the same place.
+  3. User can type either short/full name for example Samyan or Samyan Mitr.
+  4. User can type wrong but still enough to convey meaning.
+  5. User never type number of available command and number wrong.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+**Additional Idea** : 
+Add a function that user can input location themself and also add function that able to detect misspelling.
+So when we have function that user can type a location, that is mean when the location list increase, 
+there is a probability that user miss the location list and type the exist location themself. 
+This program have a function that can detect
+  - type wrong case
+  - short/full written case
+  For example -> "Mahamongkut" == "Mahamankut"
+              -> "Samyan Mitr" == "Mite" == "Samyan" == "Sammyanm"
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------                  
+**Incompleteness of the program** :
+  1. Can not detect merge word -> "Saraprakaew" != "Sara Prakaew"
+  2. Can not check the correct spelling 
+  3. Can not detect repeat word such as "building" -> "Eng Building" == "Mahamankut Building" 
+  4. Can not check sub-location -> "100 year building" != "Faculty of Engineering"
+  5. Neglect the case that user typing wrong that make words longer/shorter than 2 alphabet
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+การ run code ทางผู้เขียนได้รันบน Python IDLE โดยพิมพ์ input เองไปเรื่อย ๆ ตามที่ตัวโปรแกรมถาม
