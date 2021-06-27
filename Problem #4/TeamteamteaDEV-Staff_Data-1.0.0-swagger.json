@@ -1,0 +1,170 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "This is a API of accessing staff information",
+    "version" : "1.0.0",
+    "termsOfService" : "http://swagger.io/terms/",
+    "contact" : {
+      "email" : "apiteam@swagger.io"
+    },
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "title" : "Staff Information"
+  },
+  "paths" : {
+    "/user" : {
+      "post" : {
+        "tags" : [ "user" ],
+        "summary" : "Create user",
+        "operationId" : "createUser",
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Created user object",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/User"
+          }
+        } ],
+        "responses" : {
+          "201" : {
+            "description" : "created"
+          }
+        }
+      },
+      "get" : {
+        "tags" : [ "user" ],
+        "summary" : "Get all user",
+        "operationId" : "getUser",
+        "produces" : [ "application/json", "application/xml" ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/User"
+            }
+          }
+        }
+      }
+    },
+    "/user/{id}" : {
+      "patch" : {
+        "tags" : [ "user" ],
+        "summary" : "Updated user",
+        "description" : "This can only be done by the input user id.",
+        "operationId" : "updateUser",
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "name that need to be updated",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Updated user object",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/User"
+          }
+        } ],
+        "responses" : {
+          "404" : {
+            "description" : "user not found"
+          },
+          "200" : {
+            "description" : "successful operation"
+          },
+          "204" : {
+            "description" : "no content"
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "user" ],
+        "summary" : "Delete user",
+        "description" : "Delete user by id.",
+        "operationId" : "deleteUser",
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "The name that needs to be deleted",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "404" : {
+            "description" : "user not found"
+          },
+          "200" : {
+            "description" : "successful operation"
+          }
+        }
+      },
+      "get" : {
+        "tags" : [ "user" ],
+        "summary" : "Get user by username",
+        "operationId" : "getUserByName",
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "The name that needs to be search.",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/User"
+            }
+          },
+          "404" : {
+            "description" : "user not found"
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "User" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer"
+        },
+        "password" : {
+          "type" : "string"
+        },
+        "firstName" : {
+          "type" : "string"
+        },
+        "lastName" : {
+          "type" : "string"
+        },
+        "role" : {
+          "type" : "string"
+        },
+        "salary" : {
+          "type" : "integer"
+        }
+      },
+      "xml" : {
+        "name" : "User"
+      }
+    }
+  },
+  "externalDocs" : {
+    "description" : "Find out more about Swagger",
+    "url" : "http://swagger.io"
+  },
+  "host" : "virtserver.swaggerhub.com",
+  "basePath" : "/TeamteamteaDEV/Staff_Data/1.0.0",
+  "schemes" : [ "https", "http" ]
+}
